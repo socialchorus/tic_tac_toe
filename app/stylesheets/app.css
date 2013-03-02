@@ -1,3 +1,18 @@
+body{
+  width:100%;
+}
+
 .container {
+  width:600px;
   color: blue;
+  margin:0 auto;
+}
+
+#board{
+  width:100%;
+}
+
+#board tr td {
+  width:33%;
+  height:200px;
 }

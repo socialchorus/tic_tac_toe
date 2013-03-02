@@ -2,7 +2,7 @@ describe("TicTac.Models.Cell", function(){
   var cell
 
   beforeEach(function(){
-    cell = new TicTac.Models.Cell();
+    cell = new TicTac.Models.Cell({location:'', value:''});
   });
 
   it('should exist', function(){

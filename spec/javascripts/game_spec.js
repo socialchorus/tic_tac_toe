@@ -1,18 +1,29 @@
 describe("TicTac.Views.Game", function(){
-  it('should exists', function(){
-    var game = new TicTac.Views.Game();
-    expect(game).toBeTruthy();
-    expect(game instanceof TicTac.Views.Game).toBeTruthy();
+  it('should create an instance of board', function(){
+    var new_board = spyOn(TicTac.Views.Board.prototype, 'initialize');
+    new TicTac.Views.Game()
+    expect(new_board).toHaveBeenCalled();
   });
 
-//  it('should create board view upon initializing', function(){
-//    var board = new TicTac.Views.Board();
-//    expect(Game.new).toEqual()
-//  })
-
-  it('should render a board', function(){
-    var boardRender = spyOn(TicTac.Views.Board.prototype, "render");
+  it('should render board view', function(){
+    var board_render = spyOn(TicTac.Views.Board.prototype, 'render');
     new TicTac.Views.Game();
-    expect(boardRender).toHaveBeenCalled();
+    expect(board_render).toHaveBeenCalled();
   })
+
+
+
+
+
+
+
+
+
+//  var collection
+//
+//  it('should render a board', function(){
+//    var boardRender = spyOn(TicTac.Views.Board.prototype, "render");
+//    new TicTac.Views.Game();
+//    expect(boardRender).toHaveBeenCalled();
+//  })
 });

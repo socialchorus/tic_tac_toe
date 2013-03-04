@@ -1,38 +1,20 @@
 describe("TicTac.Views.Board", function(){
-  var el, view;
-
+  var el, boardCells;
+    //locations
   beforeEach(function(){
     el = $('<div class="container"></div>');
-    view = new TicTac.Views.Board();
+    boardCells = new TicTac.Collections.BoardCells([
+      {location: '1', value: '1'},
+      {location:'2', value: '2'},
+      {location:'3', value: '3'},
+      {location:'4', value: '4'}
+    ]);
   });
 
   it('should print text in a div', function(){
-    var anything = spyOn(TicTac.Views.Board.prototype, 'render');
-    var new_board = new TicTac.Views.Board();
+    var renderSpy = spyOn(TicTac.Views.Cell.prototype, 'render');
+    var new_board = new TicTac.Views.Board({collection: boardCells});
     new_board.render();
-    expect(anything).toHaveBeenCalled();
-    expect(view.$('.container').html).toMatch('yo');
+    expect(renderSpy.callCount).toBe(4);
   });
-
-
-
-
-
-
-
-//  it('should exists', function(){
-//    var board = new TicTac.Views.Board;
-//    expect(board).toBeTruthy();
-//    expect(board instanceof TicTac.Views.Board).toBeTruthy();
-//  });
-//
-//  describe('render', function(){
-//    it('should render cells with ids that match all locations in our collection', function(){
-//      for(var i=0; i < 9; i++){
-//        expect($("#"+TicTac.currentBoard.models[i].get('location')+"")).toBeTruthy();
-//      }
-//    })
-//  })
-
-
 });

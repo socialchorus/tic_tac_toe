@@ -1,29 +1,21 @@
 describe("TicTac.Views.Game", function(){
-  it('should create an instance of board', function(){
-    var new_board = spyOn(TicTac.Views.Board.prototype, 'initialize');
-    new TicTac.Views.Game()
-    expect(new_board).toHaveBeenCalled();
+  //location
+  beforeEach(function(){
+    boardCells = function(){
+      new TicTac.Collections.BoardCells([
+        {location: '1', value: '1'},
+        {location:'2', value: '2'},
+        {location:'3', value: '3'},
+        {location:'4', value: '4'}
+      ]);
+    }
   });
 
-  it('should render board view', function(){
+  it('should create an instance of board', function(){
+    var new_board = spyOn(TicTac.Views.Board.prototype, 'initialize');
     var board_render = spyOn(TicTac.Views.Board.prototype, 'render');
-    new TicTac.Views.Game();
+    new TicTac.Views.Game({collection: boardCells});
+    expect(new_board).toHaveBeenCalled();
     expect(board_render).toHaveBeenCalled();
-  })
-
-
-
-
-
-
-
-
-
-//  var collection
-//
-//  it('should render a board', function(){
-//    var boardRender = spyOn(TicTac.Views.Board.prototype, "render");
-//    new TicTac.Views.Game();
-//    expect(boardRender).toHaveBeenCalled();
-//  })
+  });
 });

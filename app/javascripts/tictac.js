@@ -8,7 +8,7 @@ var TicTac = {
 
 //load order, initializer for collection
 TicTac.initialize = function(){
-  var newBoard = function(){
+  this.newBoard = function(){
     return new TicTac.Collections.BoardCells([
       { },
       { },
@@ -22,5 +22,5 @@ TicTac.initialize = function(){
     ]);
   };
 
-  new TicTac.Views.Game( { collection: newBoard });
+  new TicTac.Views.Game();
 };

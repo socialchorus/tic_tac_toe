@@ -1,8 +1,16 @@
 TicTac.Views.Cell = Backbone.View.extend({
-  el: ".container",
   template: "<div class='cell'>{{value}}</div>",
+  events: {
+    'click': 'placeX'
+  },
+
+  placeX: function(){
+    console.log('yodog');
+    this.model.setX();
+  },
 
   render: function(){
-    $(this.el).append(Mustache.render(this.template, {model: (this.model)}));
+    var renderedTemplate = Mustache.render(this.template, {model: (this.model)});
+    this.$el.html(renderedTemplate);
   }
 });

@@ -21,9 +21,7 @@ describe("TicTac.Views.Cell", function(){
       currentView.placeX();
       expect(modelValueSpy).toHaveBeenCalled()
     })
-    it("should render a X when user clicks it", function(){
 
-    })
   })
 
 

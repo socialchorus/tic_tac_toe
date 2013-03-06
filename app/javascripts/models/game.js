@@ -1,4 +1,4 @@
-TicTac.Views.Game = Backbone.View.extend({
+TicTac.Models.Game = Backbone.Model.extend({
   initialize: function() {
     var boardCells = new TicTac.Collections.BoardCells([
       { },

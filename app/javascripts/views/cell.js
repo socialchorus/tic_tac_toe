@@ -14,6 +14,8 @@ TicTac.Views.Cell = Backbone.View.extend({
     this.model.setX();
   },
 
+
+
   render: function(){
 
     var renderedTemplate = Mustache.render(this.template, this.model.toJSON());

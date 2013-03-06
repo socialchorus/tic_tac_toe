@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  TicTac.initialize();
+  new TicTac.Models.Game();
 });
 
 

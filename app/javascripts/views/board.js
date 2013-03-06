@@ -8,7 +8,6 @@ TicTac.Views.Board = Backbone.View.extend({
   },
 
   render: function(){
-
     this.collection.forEach(this.addOne, this);
   }
 

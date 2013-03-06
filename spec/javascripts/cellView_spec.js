@@ -16,10 +16,13 @@ describe("TicTac.Views.Cell", function(){
       currentModel = new TicTac.Models.Cell
       currentView = new TicTac.Views.Cell({model: currentModel})
     })
-    it("it places an X in the clicked div and updates the associated model", function(){
+    it("it places a X in the clicked div and updates the associated model", function(){
       var modelValueSpy = spyOn(currentModel, 'setX');
       currentView.placeX();
       expect(modelValueSpy).toHaveBeenCalled()
+    })
+    it("should render a X when user clicks it", function(){
+
     })
   })
 

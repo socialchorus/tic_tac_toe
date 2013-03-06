@@ -1,6 +1,17 @@
 TicTac.Views.Game = Backbone.View.extend({
   initialize: function() {
-    TicTac.boardView = new TicTac.Views.Board();
+    var boardCells = new TicTac.Collections.BoardCells([
+      { },
+      { },
+      { },
+      { },
+      { },
+      { },
+      { },
+      { },
+      { }
+    ]);
+    TicTac.boardView = new TicTac.Views.Board({collection: boardCells });
     TicTac.boardView.render();
   }
 });

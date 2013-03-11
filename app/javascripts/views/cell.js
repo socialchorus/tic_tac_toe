@@ -12,7 +12,6 @@ TicTac.Views.Cell = Backbone.View.extend({
   place: function(){
     if (this.model.isEmpty()) {
       this.model.set({'value': 'x'});
-      console.log("Hey")
     }
   },
 
